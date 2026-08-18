@@ -369,3 +369,162 @@
 //     return 0;
 // }
 
+
+////calculate nCr binomial coefficient for nCr.
+// #include<iostream>
+// using namespace std;
+// int fact(int n){
+//     int fact = 1; 
+//     for(int i=1; i<=n; i++){
+//         fact*=i;
+//     }
+//     return fact;
+// }
+
+// int nCr(int n, int r){
+//     int fact_n = fact(n);
+//     int fact_r = fact(r);
+//     int fact_nr = fact(n-r);
+//     return fact_n/(fact_r*fact_nr);
+// }
+
+// int main(){
+//     int n = 6;
+//     int r = 2;
+//     cout<<"nCr= "<<nCr(n,r);
+//     return 0;
+// }
+
+// //WAF to print a number is prime or not.
+// #include<iostream>
+// using namespace std;
+// int isPrime(int n){
+//     bool isPrime = true;
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i == 0){
+//             isPrime = false;
+//         }
+//     }
+//     return isPrime;
+// }
+
+// int main(){
+//     int n=5;
+//     if(isPrime(n) == true){
+//         cout<<"Prime number";
+//     }
+//     else{
+//         cout<<"not a prime number";
+//     }
+//     return 0;
+// }
+
+// //WAF to print all prime numbers from 2 to N.
+// #include<iostream>
+// using namespace std;
+// void printPrime(int n){
+//     for(int i=2; i<=n; i++){
+//         bool isPrime = true;
+//         for(int j=2; j<i; j++){
+//             if(i%j == 0){
+//                 isPrime = false;
+//             }
+//         }
+//         if(isPrime){
+//             cout<<i<<" is prime no.\n";
+//         }
+//     }
+// }
+// int main(){
+//     int n=9;
+//     printPrime(n);
+//     return 0;
+// }
+
+////WAF to print nth fabonaaci series.
+// #include<iostream>
+// using namespace std;
+// void fabonacci(int n){
+//     int a=0, b=1;
+//     cout<<a<<" ";
+//     for(int i=0; i<n-1; i++){
+//         int c=a+b;
+//         a=b;
+//         b=a;
+//         b=c;
+//         cout<<a<<" ";
+//     }
+// }
+
+// int main(){
+//     int n=7;
+//     fabonacci(n);
+//     return 0;
+// }
+
+// //WAF to convert decimal to binary.
+// #include<iostream>
+// using namespace std;
+// int DecToBin(int n){
+//     int ans=0,pow=1;
+//     while(n>0){
+//         int rem = n%2;
+//         ans+=(rem*pow);
+//         n=n/2;
+//         pow*=10;
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     int n=10;
+//     cout<<n<<" binary form is: "<<DecToBin(n)<<endl;
+//     return 0;
+// }
+
+////WAF to convert binary to decimal.
+// #include<iostream>
+// using namespace std;
+// int BinToDec(int n){
+//     int ans=0,pow=1;
+//     while(n>0){
+//         int rem=n%10;
+//         ans+=(rem*pow);
+//         n/=10;
+//         pow*=2;
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     int n=1010;
+//     cout<<n<<" Decimal digit is : "<<BinToDec(n)<<endl;
+//     return 0;
+// }
+
+// //figure out how to find if a number is power of 2 with any loop.
+// #include<iostream>
+// using namespace std;
+// int powOfTwo(int n){
+//     int pow=1;
+//     bool isPower = false;
+//     while(pow<=n){
+//         if(pow==n){
+//             isPower = true;
+//             break;
+//         }
+//         pow*=2;
+//     }
+//     return isPower;
+// }
+
+// int main(){
+//     int n=11;
+//     if(powOfTwo(n) == true){
+//         cout<<n<<" is power of 2"<<endl;
+//     }
+//     else{
+//         cout<<n<<" is not power of 2"<<endl;
+//     }
+//     return 0;
+// }
