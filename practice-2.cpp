@@ -528,3 +528,111 @@
 //     }
 //     return 0;
 // }
+
+////figure out how to find if a number is power of 2 without any loop.
+// #include<iostream>
+// using namespace std;
+// int isPowOfTwo(int n){
+//     if(n<=0){
+//         return false;
+//     }
+//     return (n & (n-1)) == 0;
+// }
+
+// int main(){
+//     int n=9;
+//     if(isPowOfTwo(n)){
+//         cout<<n<<" pow of 2";
+//     }
+//     else{
+//         cout<<n<<" not pow of 2";
+//     }
+//     return 0;
+// }
+
+// //WAF to reverse an integer n.
+// #include<iostream>
+// using namespace std;
+// int reverseANumber(int n){
+//     int rev=0;
+//     while(n>0){
+//         int rem=n%10;
+//         rev=(rev*10)+rem;
+//         n=n/10;
+//     }
+//     return rev;
+// }
+// int main(){
+//     int n=125;
+//     cout<<"reverse = "<<reverseANumber(n);
+//     return 0;
+// }
+
+// //find smallest/largest in array.
+// #include<iostream>
+// #include <climits>
+// using namespace std;
+// void smallestAndLargestNum(int arr[],int n){
+//     int smallest = INT_MAX;
+//     int largest = INT_MIN;
+//     for(int i=0; i<n; i++){
+//         smallest=min(arr[i],smallest);
+//         largest=max(arr[i],largest);
+//     }
+//     cout<<"smallest in array is :"<<smallest<<endl;
+//     cout<<"largest in array is :"<<largest<<endl;
+// }
+
+// int main(){
+//     int n=5;
+//     int arr[n]={6,5,2,7,9};
+//     smallestAndLargestNum(arr,n);
+//     return 0;
+// }
+
+// #include<iostream>
+// using namespace std;
+// int linearSearch(int arr[],int n, int target){
+//     for(int i=0; i<n; i++){
+//         if(arr[i] == target){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
+// int main(){
+//     int n=5;
+//     int arr[n] = {1,2,3,4,5};
+//     int target=5;
+//     int result = linearSearch(arr,n,target);
+//     if(result == -1){
+//         cout<<"target is not found in array";
+//     }else{
+//     cout<<target<<" is at index "<<result<<" in array.";
+//     }
+//     return 0;
+// }
+
+// //WAF to reverse an array.using 2 pointer approach.
+// #include<iostream>
+// using namespace std;
+// void reverseArr(int arr[],int n){
+//     int i=0, j=n-1;
+//     while(i<j){
+//         swap(arr[i],arr[j]);
+//         i++;
+//         j--;
+//     }
+// }
+
+// int main(){
+//     int n=5;
+//     int arr[n]= {1,2,3,4,5};
+//     reverseArr(arr,n);
+//     cout<<"Reverse of array : ";
+//     for(int i=0; i<n; i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
