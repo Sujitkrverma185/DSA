@@ -636,3 +636,122 @@
 //     }
 //     return 0;
 // }
+
+//  //WAF to calculate suma and product of an array.
+//  #include<iostream>
+//  using namespace std;
+//  void sumAndProductOfArray(int arr[], int n){
+//     int sum=0,prod=1;
+//     for(int i=0; i<n;i++){
+//         sum+=arr[i];
+//         prod*=arr[i];
+//     }
+//     cout<<"sum of array : "<<sum<<endl;
+//     cout<<"product of array : "<<prod<<endl;
+//  }
+
+//  int main(){
+//     int n=5;
+//     int arr[n]={1,2,3,4,5};
+//     sumAndProductOfArray(arr,n);
+//     return 0;
+//  }
+
+
+// //WAF to to swap the max and min number of an array.
+// #include<iostream>
+// #include<algorithm>
+// using namespace std;
+
+// void swapMaxAndMin(int arr[],int n){
+//     int minIdx=0;
+//     int maxIdx=0;
+//     for(int i=0; i<n; i++){
+//         if(arr[i]<arr[minIdx]){
+//             minIdx = i;
+//         }
+//         if(arr[i]>arr[maxIdx]){
+//             maxIdx = i;
+//         }
+//     }
+//     swap(arr[minIdx],arr[maxIdx]);
+// }
+
+// int main(){
+//     int n=5; 
+//     int arr[n]={1,2,3,4,5};
+//     swapMaxAndMin(arr,n);
+//     for(int i=0; i<n; i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+
+// }
+
+// //WAF to print all the unique values in an array.using nested loop.
+// #include<iostream>
+// using namespace std;
+// void uniqueNumber(int arr[],int n){
+//     for(int i=0; i<n; i++){
+//         int count=0;
+//         for(int j=0; j<n; j++){
+//             if(arr[i] == arr[j]){
+//                 count++;
+//             }
+//         }
+//         if(count == 1){
+//            cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<"is unique values in array.";
+// }
+
+// int main(){
+//     int n=6;
+//     int arr[n] ={1,2,3,2,1,4};
+//     uniqueNumber(arr,n);
+//     return 0;
+// }
+
+// //WAF to print intersection of 2 array.
+// #include<iostream>
+// using namespace std;
+// void intersectionOfTwoArr(int arr1[],int arr2[],int n1,int n2){
+//     for(int i=0; i<n1; i++){
+//         for(int j=0; j<n2; j++){
+//             if(arr1[i] == arr2[j]){
+//                 cout<<arr1[i]<<" ";
+//             }
+//         }
+//     }
+//     cout<<"is intersection between two arrays.";
+// }
+
+// int main(){
+//     int n1=4;
+//     int n2=4;
+//     int arr1[n1]={1,2,3,4};
+//     int arr2[n2]={3,4,5,6};
+//     intersectionOfTwoArr(arr1,arr2,n1,n2);
+//     return 0;
+// }
+
+// //WAF to print single number using vector.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int SingleNumber(vector<int> nums){
+//     int ans=0;
+//     for(int i=0;i<nums.size();i++){
+//         ans^=nums[i];
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     vector<int> nums={1,2,1,2,3};
+//     cout<<SingleNumber(nums);
+//     return 0;
+// }
+
