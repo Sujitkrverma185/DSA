@@ -755,3 +755,458 @@
 //     return 0;
 // }
 
+// //WAF to print subarray .use Brute Force .
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// void subarr(vector<int> nums){
+//     for(int st=0; st<nums.size(); st++){
+//         for(int end=st; end<nums.size(); end++){
+//             for(int i=st; i<=end; i++){
+//                 cout<<nums[i];
+//             }
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// int main(){
+//     vector<int> nums={1,2,3,4,5};
+//     subarr(nums);
+//     return 0;    
+// }
+
+// //WAF to print maximum subarray sum.using brute force approach.
+// #include<iostream>
+// #include<climits>
+// #include<vector>
+// using namespace std;
+// int maxSubArray(vector<int> nums){
+//     int maxSum=INT_MIN;
+//     for(int i=0; i<nums.size(); i++){
+//         int currSum=0;
+//         for(int j=i; j<nums.size(); j++){
+//             currSum+=nums[j];
+//             maxSum=max(currSum,maxSum);
+//         }
+//     }
+//     return maxSum;
+// }
+
+// int main(){
+//     vector<int> nums={3,-4,5,4,-1,7,-8};
+//     cout<<maxSubArray(nums);
+//     return 0;
+// }
+
+// //WAF to print maximum subarray sum.using  kadene's algorithm most optimized approach.
+// #include<iostream>
+// #include<climits>
+// #include<vector>
+// using namespace std;
+// void maximumSubarrSum(vector<int> nums){
+//     int currSum=0, maxSum=INT_MIN;
+//     for(int i=0; i<nums.size(); i++){
+//         currSum+=nums[i];
+//         maxSum=max(currSum,maxSum);
+//         if(currSum<0){
+//             currSum=0;
+//         }
+//     }
+//     cout<<maxSum;
+// }
+
+// int main(){
+//     vector<int> nums={3,-4,5,4,-1,7,-8};
+//     maximumSubarrSum(nums);
+//     return 0;
+// }
+
+// //WAF to calculate pairsum using Brute force approach.at given target,in sorted array.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// vector<int> pairSum(vector<int> nums, int target){
+//     vector<int> ans;
+//     for(int i=0; i<nums.size(); i++){
+//         for(int j=i+1; j<nums.size(); j++){
+//             if(nums[i] + nums[j] == target){
+//                 ans.push_back(i);
+//                 ans.push_back(j);
+//                 return ans;
+//             }
+//         }
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     vector<int> nums={2,7,11,15};
+//     int target = 9;
+//     vector<int> ans = pairSum(nums,target);
+//     cout<<ans[0]<<" "<<ans[1];
+//     return 0;
+// }
+
+// //WAF to calculate pairsum using optimized approach at given target in sorted array.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// vector<int> pairSum(vector<int> nums, int tar){
+//     vector<int> ans;
+//     int st=0,end=nums.size()-1;
+//     while(st<end){
+//         int pairSum = nums[st] + nums[end];
+//         if(pairSum < tar){
+//             st++;
+//         }
+//         else if(pairSum > tar){
+//             end--;
+//         }
+//         else{
+//             ans.push_back(st);
+//             ans.push_back(end);
+//             return ans;
+//         }
+//     }
+// }
+
+
+// int main(){
+//     vector<int> nums={10,12,13,15};
+//     int tar = 28;
+//     vector<int> ans = pairSum(nums,tar);
+//     cout<<ans[0]<<" "<<ans[1];
+//     return 0;
+// }
+
+
+// //WAF to calculate Majority Element using Brute force approach.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int majorityElement(vector<int> nums){
+//     int n = nums.size();
+//     for(int val : nums){
+//         int freq=0;
+//         for(int el : nums){
+//             if(el == val){
+//                 freq++;
+//             }
+//         }
+//         if(freq > n/2){
+//             return val;
+//         }
+//     }
+// }
+
+// int main(){
+//     vector<int> nums ={1,1,1,2,2,2,2};
+//     cout<<majorityElement(nums);
+//     return 0;
+// }
+
+// //WAF to calculate Majority Element using optimal approach.
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int majorityElement(vector<int> nums){
+//     sort(nums.begin(),nums.end());
+//     int freq=1, ans=nums[0];
+//     for(int i=1; i<nums.size(); i++){
+//         if(nums[i] == nums[i-1]){
+//             freq++;
+//         }
+//         else{
+//             freq=1;
+//             ans=nums[i];
+//         }
+//         if(freq > nums.size()/2){
+//             return ans;
+//         }
+//     }
+// }
+
+// int main(){
+//     vector<int> nums={1,1,1,2,2,2,2};
+//     cout<<majorityElement(nums);
+//     return 0;
+// }
+
+// //WAF to calculate Majority Element using moore's voting algorithm.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int mooreAlgo(vector<int> nums){
+//     int freq=0,ans=0;
+//     for(int i=0; i<nums.size(); i++){
+//         if(freq == 0){
+//             ans=nums[i];
+//         }
+//         if(ans == nums[i]){
+//             freq++;
+//         }
+//         else{
+//             freq--;
+//         }
+//     }
+
+//     // when majority element is not given.
+//     int count=0;
+//     for(int val: nums){
+//         if(val == ans){
+//             count++;
+//         }
+//     }
+
+//     if(count > nums.size()/2){
+//         return ans;
+//     }
+//     else{
+//         return -1;
+//     }
+// }
+
+// int main(){
+//     vector<int> nums={1,2,1,2,1,2,2};
+//     cout<<mooreAlgo(nums);
+//     return 0;
+// }
+
+// //WAF to compute X^N using binary form.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int computeXPowN(double x, long n){
+//     double ans=1;
+//     while(n>0){
+//         if(n%2 == 1){
+//             ans*=x;
+//         }
+//         x*=x;
+//         n=n/2;
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     double x=4;
+//     long n=15;
+//     cout<<computeXPowN(x,n);
+//     return 0;
+// }
+
+// //WAF to compute X^N using binary form to handle negative number.
+// #include<iostream>
+// using namespace std;
+// int computeXPowN(double x, int n){
+//     if(n==0) return 1.0;
+//     if(x==0) return 0.0;
+//     if(x==1) return 1.0;
+//     if(x==-1 && n%2==0) return 1.0;
+//     if(x==-1 && n%2!=0) return -1.0;
+
+//     int binaryForm = n;
+//     if(n<0){
+//         x=1/x;
+//         binaryForm = -binaryForm;
+//     }
+//     double ans=1;
+//     while(binaryForm > 0){
+//         if(binaryForm % 2 == 1){
+//             ans*=x;
+//         }
+//         x*=x;
+//         binaryForm/=2;
+//     }
+//     return ans;
+    
+// }
+
+// int main(){
+//     double x=3;
+//     int n=5;
+//     cout<<computeXPowN(x,n);
+//     return 0;
+// }
+
+// //WAP to splve buy and sell problem where prices=[7,1,5,3,6,4].
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n=6;
+//     int arr[n] = {7,1,5,3,6,4};
+//     int bb=arr[0];
+//     int mp=0;
+//     for(int i=1; i<n; i++){
+//         if(arr[i]>bb){
+//         mp=max(mp,arr[i]-bb);
+//     }
+//         bb=min(bb,arr[i]);
+//     }
+//     cout<<mp;
+// }
+
+
+// //WAF to solve container with most water problem where height = [1,8,6,2,5,4,8,3,7].use brute force.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int containerWithMostWater(vector<int> nums){
+//     int mostWater=0;
+//     for(int i=0; i<nums.size(); i++){
+//         for(int j=i+1; j<nums.size(); j++){
+//             int height= min(nums[i],nums[j]);
+//             int width=j-i;
+//             int area=height*width;
+//             mostWater=max(mostWater,area);
+//         }
+//     }
+//     return mostWater;
+// }
+
+// int main(){
+//     vector<int> nums={1,8,6,2,5,4,8,3,7};
+//     cout<<containerWithMostWater(nums);
+//     return 0;
+// }
+
+
+// //WAF to solve container with most water problem where height = [1,8,6,2,5,4,8,3,7].use optimized approach.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int containerWithMostWater(vector<int> nums){
+//     int maxWater=0;
+//     int st=0;
+//     int end=nums.size()-1;
+//     while(st<end){
+//         int height=min(nums[st],nums[end]);
+//         int width = end-st;
+//         int area=height*width;
+//         maxWater=max(maxWater,area);
+//         nums[st] < nums[end] ? st++ : end--;
+//     }
+//     return maxWater;
+// }
+
+// int main(){
+//     vector<int> nums={1,8,6,2,5,4,8,3,7};
+//     cout<<containerWithMostWater(nums);
+//     return 0;
+// }
+
+// //WAF to solve product of array Expect self problem where nums=[1,2,3].use brute force approach.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// vector<int> ProductOfArrayExpectSelf(vector<int> nums){
+//     vector<int> ans;
+//     for(int i=0; i<nums.size(); i++){
+//         int product=1;
+//         for(int j=0; j<nums.size(); j++){
+//             if(j!=i){
+//                 product*=nums[j];
+//             }
+//         }
+//         ans.push_back(product);
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     vector<int> nums={1,2,3,4};
+//     vector<int> ans = ProductOfArrayExpectSelf(nums);
+//     for(int val : ans){
+//         cout<<val<<endl;
+//     }
+//     return 0;
+// }
+
+// //WAF to solve product of array Expect self problem where nums=[1,2,3].use optimal approach.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// vector<int> productOfSelfExcept(vector<int> nums){
+//     int n=nums.size();
+//     vector<int> ans(n,1);
+    
+//     int prefix=1;
+//     for(int i=0; i<n; i++){
+//         ans[i]=prefix;
+//         prefix*=nums[i];
+//     }
+    
+//     int suffix=1;
+//     for(int i=n-1; i>=0; i--){
+//         ans[i]*=suffix;
+//         suffix*=nums[i];
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     vector<int> nums={1,2,3,4};
+//     vector<int> ans = productOfSelfExcept(nums);
+//     for(int i: ans){
+//         cout<<i<<" ";
+//     }
+//     return 0;
+// }
+
+// //predict output
+// #include<iostream>
+// using namespace  std;
+// int main(){
+//     int a=5;
+//     int *p = &a;
+//     int **q=&p;
+//     cout<<*p<<endl;
+//     cout<<**q<<endl;
+//     cout<<p<<endl;
+//     cout<<*q<<endl;
+//     return 0;
+// }
+
+// //predict output
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[]={10,20,30,40};
+//     int *ptr = arr;
+//     cout<<*(ptr + 1)<<endl;
+//     cout<<*(ptr + 3)<<endl;
+//     ptr++;
+//     cout<<*ptr<<endl;
+//     return 0;
+// }
+
+//WAF to apply Binary search in sorted array.
+#include<iostream>
+#include<vector>
+using namespace std;
+int BinarySearch(vector<int> nums, int tar){
+    int st=0, end=nums.size()-1, mid;
+    while(st<=end){
+        mid=st+(end-st)/2;
+        if(tar > nums[mid]){
+            st=mid+1;
+        }
+        else if(tar < nums[mid]){
+            end=mid-1;
+        }
+        else{
+            return mid;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    vector<int> nums={1,2,3,4,5,6,7};
+    int tar=6;
+    cout<<"target is found at "<<BinarySearch(nums,tar);
+    return 0;
+}
