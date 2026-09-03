@@ -1183,30 +1183,91 @@
 //     return 0;
 // }
 
-//WAF to apply Binary search in sorted array.
-#include<iostream>
-#include<vector>
-using namespace std;
-int BinarySearch(vector<int> nums, int tar){
-    int st=0, end=nums.size()-1, mid;
-    while(st<=end){
-        mid=st+(end-st)/2;
-        if(tar > nums[mid]){
-            st=mid+1;
-        }
-        else if(tar < nums[mid]){
-            end=mid-1;
-        }
-        else{
-            return mid;
-        }
-    }
-    return -1;
-}
+// //WAF to apply Binary search in sorted array.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int BinarySearch(vector<int> nums, int tar){
+//     int st=0, end=nums.size()-1, mid;
+//     while(st<=end){
+//         mid=st+(end-st)/2;
+//         if(tar > nums[mid]){
+//             st=mid+1;
+//         }
+//         else if(tar < nums[mid]){
+//             end=mid-1;
+//         }
+//         else{
+//             return mid;
+//         }
+//     }
+//     return -1;
+// }
 
-int main(){
-    vector<int> nums={1,2,3,4,5,6,7};
-    int tar=6;
-    cout<<"target is found at "<<BinarySearch(nums,tar);
-    return 0;
-}
+// int main(){
+//     vector<int> nums={1,2,3,4,5,6,7};
+//     int tar=6;
+//     cout<<"target is found at "<<BinarySearch(nums,tar);
+//     return 0;
+// }
+
+// //WAF to apply Binary search in rotated array at given target.nums={3,4,5,6,7,0,1,2}.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int rotatedArr(vector<int> nums, int tar){
+//     int st=0,end=nums.size()-1, mid;
+//     while(st<=end){
+//          mid=st+(end-st)/2;
+//          if(nums[mid] == tar) return mid;
+//          if(nums[st]<=nums[mid]){
+//             if(nums[st]<=tar && tar<=nums[mid]){
+//                 end=mid-1;
+//             }else{
+//                 st=mid+1;
+//             }
+//          }
+//          else{
+//             if(nums[mid]<=tar && tar<=nums[end]){
+//                 st = mid+1;
+//             }else{
+//                 end=mid-1;
+//             }
+//          }
+//     }
+//     return -1;
+// }
+
+// int main(){
+//     vector<int> nums={3,4,5,6,7,0,1,2};
+//     int tar = 0;
+//     cout<<rotatedArr(nums,tar);
+//     return 0;
+// }
+
+// //WAF to find peak index in maountain array.where indx=0,n-1 != peak;
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int peakIndexMountainArr(vector<int> nums){
+//     int st = 1, end=nums.size()-2;
+//     while(st<=end){
+//         int mid = st+(end-st)/2;
+//         if(nums[mid-1]<nums[mid] && nums[mid]>nums[mid+1]){
+//             return mid;
+//         }
+//         if(nums[mid-1]<nums[mid]){
+//             st=mid+1;
+//         }
+//         else{
+//             end=mid-1;
+//         }
+//     }
+//     return -1;
+// }
+
+// int main(){
+//     vector<int> nums={0,3,8,9,5,2};
+//     cout<<peakIndexMountainArr(nums);
+//     return 0;
+// }
