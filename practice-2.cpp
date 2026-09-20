@@ -1407,3 +1407,4 @@
 //     cout<<minTimeToPainter(arr,n,m);
 //     return 0;
 // }
+
